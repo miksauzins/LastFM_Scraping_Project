@@ -76,18 +76,16 @@ option = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=option)
 
 
-hasLoggedIn = False
 choice = 0
 
 driver.get("https://www.last.fm/")
 driver.implicitly_wait(2)
 
-if(driver.current_url.endswith("/home")):
-    hasLoggedIn = true
-else:
+if(not driver.current_url.endswith("/home")):
     driver.get("https://www.last.fm/login")
     time.sleep(6)
     login_with_input()
+
 
 time.sleep(5)
 check_login_success(choice)
@@ -99,4 +97,11 @@ itemList = get_recommended_items(recommendationListElement)
 
 for array in itemList:
     print(array)
+
+
+## to-do
+## check for existing recommendation txt file
+## make app create txt files for new recommendations
+## ask user for certain artist recommendations to appear
+## only add recommendations if song/artist isn't already in playlist
 
