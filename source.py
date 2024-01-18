@@ -1,14 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 import time
 import os.path
 
 def login_with_input() :
-    global typeChoice
-    global customArtist
     try: 
         cookieBarIsPresent = driver.find_element(By.ID, "onetrust-reject-all-handler")
         cookieBarIsPresent.click()
@@ -104,7 +101,6 @@ def handle_rec_items(itemList):
                         f.write(context + '\n')
 
 
-
 def get_recommended_items(recElement) :
     dividedInfoList = []
     for element in recElement:
@@ -165,14 +161,14 @@ driver = webdriver.Chrome(service=service, options=option)
 
 
 driver.get("https://www.last.fm/")
-driver.implicitly_wait(1)
+time.sleep(1)
 
 if(not driver.current_url.endswith("/home")):
     driver.get("https://www.last.fm/login")
     time.sleep(5)
     login_with_input()
 
-time.sleep(5)
+time.sleep(2)
 handle_login_route()
 
 recommendationListElement = driver.find_elements(By.CLASS_NAME, "recs-feed-item")
