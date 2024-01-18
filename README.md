@@ -6,6 +6,8 @@
 
 ## Programmas izmantošanas iespējas
 
+[Programmas demonstrācija](https://streamable.com/8moyti)
+
 Programmu var lietot cilvēki, kuriem ir izveidots Last.fm konts, kas seko līdzi viņu mūzikas klausījumu vēsturei.
 
 Lietotāji var izvēlēties, kāda formāta rekomendācijas var iegūt - jaunas dziesmas, albumus vai arī izpildītājus. Lietotāji arī var norādīt, kādu izpildītāju ņemt kā 'iespaidu' rekomendācijām, vai arī nenorādīt nevienu, kurā gadījumā tiks atgrieztas visas rekomendācijas, kuras ir saistošas un kuras lietotājs nav iepriekš klausījies.
